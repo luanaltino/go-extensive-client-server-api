@@ -6,8 +6,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      #Modify following line
-      - /home/laltino/Tools/sqlite3db:/root/db/
+      - /tmp/sqlite3db:/root/db/
     ports:
-      - '9000:9000' # expose ports - HOST:CONTAINER
+      - '9000:9000'
     restart: unless-stopped
