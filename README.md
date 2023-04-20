@@ -20,3 +20,26 @@ O client.go precisará receber do server.go apenas o valor atual do câmbio (cam
 O client.go terá que salvar a cotação atual em um arquivo "cotacao.txt" no formato: Dólar: {valor}
  
 O endpoint necessário gerado pelo server.go para este desafio será: /cotacao e a porta a ser utilizada pelo servidor HTTP será a 8080.
+
+### Para executar o projeto 
+Caso não tenha o sqlite3 instalado em seu computador local, você pode inicializá-lo através do docker-compose composto nesse projeto
+
+```
+docker compose up -d
+```
+
+Para validar o desafio, siga os passos abaixo:
+
+Primeiramente deve subir o client utilizando o comando 
+
+```
+go run client/main.go
+```
+
+O server subirá na porta no endereço `http://localhost:8080`
+
+Assim que o _client_ estiver no ar, basta rodar o _server_ utilizando o comando:
+
+```
+go run server/main.go
+``` 
