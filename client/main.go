@@ -14,9 +14,10 @@ import (
 func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 300*time.Millisecond)
+
 	//cancelando o contexto
 	defer cancel()
-	url := "http://localhost:8080/cotacao"
+	url := "http://localhost:8080/quotation"
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		panic(err)
@@ -32,7 +33,7 @@ func main() {
 		panic(err)
 	}
 
-	var cambioQuotation models.CambioQuotation
+	var cambioQuotation models.Quotation
 	err = json.Unmarshal(body, &cambioQuotation)
 	if err != nil {
 		panic(err)
